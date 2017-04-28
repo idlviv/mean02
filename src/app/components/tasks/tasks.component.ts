@@ -26,12 +26,15 @@ export class TasksComponent {
       title: this.title,
       isDone: false
     };
+    console.log(newTask);
     this.taskService.addTask(newTask)
       .subscribe(task => {
+        console.log(task);
         this.tasks.push(task);
         this.title = '';
       })
   }
+
   deleteTask(id) {
     let tasks = this.tasks;
     this.taskService.deleteTask(id).subscribe(data => {
@@ -45,4 +48,23 @@ export class TasksComponent {
     })
   }
 
+  updateStatus(task) {
+    let _task = {
+      _id: task._id,
+      title: task.title,
+      isDone: !task.isDone
+    };
+    this.taskService.updateStatus(_task).subscribe(data => {
+      task.isDone = !task.isDone;
+    });
+  }
+
+  textLine(task) {
+
+    if (task.isDone) {
+      return 'text-line';
+    } else {
+      return 'text-no-line';
+    }
+  }
 }

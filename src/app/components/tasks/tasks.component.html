@@ -10,10 +10,10 @@
 
     <div class="task-list" *ngFor="let task of tasks">
       <div class="col-md-1">
-        <input type="checkbox">
+        <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
       </div>
       <div class="col-md-7">
-        <p>{{task.title}}</p>
+        <p [ngClass]="textLine(task)" >{{task.title}}</p>
       </div>
       <div class="col-md-4">
         <input type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-danger">

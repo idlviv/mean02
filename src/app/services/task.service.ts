@@ -9,7 +9,7 @@ export class TaskService {
   }
 
   getTasks() {
-    return this.http.get('http://localhost:3000/api/tasks')
+    return this.http.get('/api/tasks')
       .map(res => res.json());
   }
 
@@ -17,14 +17,24 @@ export class TaskService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(
-      'http://localhost:3000/api/task',
+      '/api/task',
       JSON.stringify(newTask),
-      {headers: headers}).
-      map(res => res.json());
+      {headers: headers})
+      .map(res => res.json());
   }
 
   deleteTask(id) {
     return this.http.delete('/api/task/' + id)
+      .map(res => res.json());
+  }
+
+  updateStatus(task) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.put(
+      '/api/task/' + task._id,
+      JSON.stringify(task),
+      {headers: headers})
       .map(res => res.json());
   }
 }

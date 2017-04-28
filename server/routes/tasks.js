@@ -29,13 +29,14 @@ router.get('/task/:id', function(req, res, next) {
 //Save task
 router.post('/task', function(req, res, next) {
   var task = req.body;
+  console.log(task);
   if (!task.title || !(task.isDone + '')) {
     res.status(400);
     res.send({
       'error': 'Bad data'
     });
   } else {
-    db.task.save(task, function (err, task) {
+    db.tasks.save(task, function(err, task) {
       if (err) {
         res.send(err);
       }
@@ -87,14 +88,6 @@ router.put('/task/:id', function(req, res, next) {
       });
   }
 
-  db.tasks.remove(
-    {_id: mongojs.ObjectId(req.params.id)},
-    function(err, task) {
-      if (err) {
-        res.send(err);
-      }
-      res.send(task);
-    });
 });
 
 module.exports = router;

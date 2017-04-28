@@ -1,7 +1,7 @@
 {
   "port": 3000,
   "mongojs": {
-    "uri": "mongodb://brad:brad@ds123331.mlab.com:23331/mean01",
+    "uri": "mongodb://brad:brad@ds125481.mlab.com:25481/mean02",
     "options": {
       "server": {
         "socketOptions": {
