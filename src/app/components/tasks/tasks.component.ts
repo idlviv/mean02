@@ -9,8 +9,7 @@ import { Task } from '../task';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent {
-  tasks: any;
-  // tasks: Task[];
+  tasks: Task[];
   title: string;
 
   constructor(private taskService: TaskService) {
@@ -26,10 +25,8 @@ export class TasksComponent {
       title: this.title,
       isDone: false
     };
-    console.log(newTask);
     this.taskService.addTask(newTask)
       .subscribe(task => {
-        console.log(task);
         this.tasks.push(task);
         this.title = '';
       })

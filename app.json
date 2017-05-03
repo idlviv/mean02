@@ -1,0 +1,7 @@
+{
+  "name": "Start on Heroku: Node.js",
+  "description": "MEAN",
+  "repository": "https://github.com/idlviv/mean02",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
