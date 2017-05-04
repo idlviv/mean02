@@ -22,9 +22,6 @@ app.use(bodyParser.urlencoded({
 app.use('/', index);
 app.use('/api', tasks);
 
-// app.listen(config.get('port'), function() {
-//   console.log('Server on port ' + config.get('port'));
-// });
-app.listen(3000, function() {
-  console.log('Server on port ');
+app.listen(process.env.PORT || config.get('port'), function() {
+  console.log('Listening on ', process.env.PORT || config.get('port'));
 });

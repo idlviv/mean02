@@ -5,12 +5,11 @@
   "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +23,9 @@
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
     "@angular/cli": "1.0.1",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
@@ -48,12 +49,5 @@
     "mongojs": "^2.4.0",
     "nconf": "^0.8.4",
     "path": "^0.12.7"
-  },
-  "devDependencies": {
-  },
-  "engines": {
-    "node": "6.10.0",
-    "npm": "4.5.0"
   }
 }
-
